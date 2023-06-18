@@ -1,0 +1,29 @@
+TextQuery : read the txt file.
+    vector: save file text
+    map : connect word to line_number
+        key :word
+        value : set -- save line_number
+
+    function:
+        query:  search map-key 
+            count : set.size();
+            line_number : foreach set
+            text : vector[line_number]
+QueryResult: save the result
+    using shared_ptr to share data
+
+
+improved: second version:
+
+UML
+    Query_base
+        WordQuery
+        NotQuery
+        BinaryQuery
+            AndQuery
+            OrQuery
+        abstract method:
+            eval
+            rep
+    Query 接口类
+        重载运算符 & | ~
